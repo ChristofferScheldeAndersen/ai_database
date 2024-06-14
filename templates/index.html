@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <p>
+        <table>
+            <thead>
+                <tr>
+                    <td>Stock</td>
+                    <td>Amount</td>
+                    <td>Price</td>
+                    <td>Total</td>
+                    <td>Return</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for owned_stock in owned_stocks %}
+                    <tr>
+                        <td>{{ owned_stock.stock_symbol }}</td>
+                        <td>{{ owned_stock.number_of_stocks }}</td>
+                        <td>{{ owned_stock.price_of_stock }}</td>
+                        <td>{{ owned_stock.total_stock_value }}</td>
+                        <td>{{ owned_stock.return }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </p>
+    <p>
+        Cash balance: {{  cash_balance  }}
+    </p>
+    <p>
+        Total value of stocks and cash: {{  total_balance  }}
+    </p>
+{% endblock %}

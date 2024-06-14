@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3">
+        <p>
+            {{ stock.symbol }} is currently valued at {{ stock.price }}.
+        </p>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table>
+        <thead>
+            <tr>
+                <td>Stock</td>
+                <td>Transaction</td>
+                <td>Amount</td>
+                <td>Price</td>
+                <td>Time</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction.stock_symbol }}</td>
+                    <td>{{ transaction.transaction_type }}</td>
+                    <td>{{ transaction.number_of_stocks }}</td>
+                    <td>{{ transaction.price_of_stock }}</td>
+                    <td>{{ transaction.current_time }}</td>
+                </tr>
+                {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
